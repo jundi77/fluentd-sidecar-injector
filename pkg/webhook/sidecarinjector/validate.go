@@ -479,6 +479,30 @@ func injectFluentD(pod *corev1.Pod) (*Result, error) {
 			},
 		},
 		corev1.EnvVar{
+			Name: "POD_ID",
+			ValueFrom: &corev1.EnvVarSource{
+				FieldRef: &corev1.ObjectFieldSelector{
+					FieldPath: "metadata.uid",
+				},
+			},
+		},
+		corev1.EnvVar{
+			Name: "POD_LABELS",
+			ValueFrom: &corev1.EnvVarSource{
+				FieldRef: &corev1.ObjectFieldSelector{
+					FieldPath: "metadata.labels",
+				},
+			},
+		},
+		corev1.EnvVar{
+			Name: "POD_ANNOTATIONS",
+			ValueFrom: &corev1.EnvVarSource{
+				FieldRef: &corev1.ObjectFieldSelector{
+					FieldPath: "metadata.annotations",
+				},
+			},
+		},
+		corev1.EnvVar{
 			Name: "POD_IP",
 			ValueFrom: &corev1.EnvVarSource{
 				FieldRef: &corev1.ObjectFieldSelector{
@@ -727,6 +751,30 @@ func injectFluentBit(pod *corev1.Pod) (*Result, error) {
 			ValueFrom: &corev1.EnvVarSource{
 				FieldRef: &corev1.ObjectFieldSelector{
 					FieldPath: "metadata.namespace",
+				},
+			},
+		},
+		corev1.EnvVar{
+			Name: "POD_ID",
+			ValueFrom: &corev1.EnvVarSource{
+				FieldRef: &corev1.ObjectFieldSelector{
+					FieldPath: "metadata.uid",
+				},
+			},
+		},
+		corev1.EnvVar{
+			Name: "POD_LABELS",
+			ValueFrom: &corev1.EnvVarSource{
+				FieldRef: &corev1.ObjectFieldSelector{
+					FieldPath: "metadata.labels",
+				},
+			},
+		},
+		corev1.EnvVar{
+			Name: "POD_ANNOTATIONS",
+			ValueFrom: &corev1.EnvVarSource{
+				FieldRef: &corev1.ObjectFieldSelector{
+					FieldPath: "metadata.annotations",
 				},
 			},
 		},

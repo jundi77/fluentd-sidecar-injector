@@ -294,6 +294,9 @@ You can use this value in your fluent.conf with config-volume option.
 | NODE_NAME           | `spec.nodeName`           |
 | POD_NAME            | `metadata.name`           |
 | POD_NAMESPACE       | `metadata.namespace`      |
+| POD_ID              | `metadata.uid`            |
+| POD_LABELS          | `metadata.labels`         |
+| POD_ANNOTATIONS     | `metadata.annotations`    |
 | POD_IP              | `status.podIP`            |
 | POD_SERVICE_ACCOUNT | `spec.serviceAccountName` |
 | CPU_RESOURCE        | `requests.cpu`            |
